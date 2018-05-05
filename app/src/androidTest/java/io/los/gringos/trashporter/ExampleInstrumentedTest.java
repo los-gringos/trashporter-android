@@ -1,4 +1,4 @@
-package com.los_gringos.trashporter;
+package io.los.gringos.trashporter;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.los_gringos.trashporter", appContext.getPackageName());
+        assertEquals("io.los.gringos.trashporter", appContext.getPackageName());
     }
 }

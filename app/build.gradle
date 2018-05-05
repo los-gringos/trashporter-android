@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.los_gringos.trashporter"
+        applicationId "io.los.gringos.trashporter"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -30,6 +30,8 @@ dependencies {
 
     //Google Play Services
     implementation 'com.google.android.gms:play-services-maps:15.0.0'
+
+    implementation 'com.google.maps.android:android-maps-utils:0.4+'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

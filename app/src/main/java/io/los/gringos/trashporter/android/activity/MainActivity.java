@@ -1,4 +1,4 @@
-package com.los_gringos.trashporter.activity;
+package io.los.gringos.trashporter.android.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.los_gringos.trashporter.R;
+import io.los.gringos.trashporter.R;
 
 public class MainActivity extends AppCompatActivity {
 

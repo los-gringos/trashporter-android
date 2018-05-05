@@ -1,7 +1,7 @@
-package com.los_gringos.trashporter.activity;
+package io.los.gringos.trashporter.android.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -9,9 +9,13 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.los_gringos.trashporter.R;
+
+import io.los.gringos.trashporter.R;
+import io.los.gringos.trashporter.android.utils.LocationUtil;
 
 public class Map extends AppCompatActivity implements OnMapReadyCallback {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,12 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         LatLng adelfiko = new LatLng(41.014645, 23.457354);
         LatLng agiaEleni = new LatLng(41.003545, 23.559196);
         LatLng peponia = new LatLng(40.988154, 23.516756);
+
+
+        System.out.println(LocationUtil.());
+
+        int i = 5;
+
         googleMap.addMarker(new MarkerOptions().position(serres)
                 .title("Marker in Serres"));
         googleMap.addMarker(new MarkerOptions().position(provatas)
@@ -57,6 +67,5 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         googleMap.addMarker(new MarkerOptions().position(peponia)
                 .title("Marker in Peponia"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(serres));
-
     }
 }

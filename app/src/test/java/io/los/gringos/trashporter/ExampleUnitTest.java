@@ -1,4 +1,4 @@
-package com.los_gringos.trashporter;
+package io.los.gringos.trashporter;
 
 import org.junit.Test;
 
