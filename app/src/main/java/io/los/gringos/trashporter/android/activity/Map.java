@@ -42,7 +42,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         LatLng peponia = new LatLng(40.988154, 23.516756);
 
 
-        System.out.println(LocationUtil.());
+        
 
         int i = 5;
 
