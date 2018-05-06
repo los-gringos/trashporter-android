@@ -38,6 +38,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         //Creates Markers on Map and inserts them to List markers.
+
         this.addMarkers(googleMap);
 
         //zooms around the markers field when map opens

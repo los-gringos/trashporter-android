@@ -26,11 +26,11 @@ android {
 }
 
 
-    repositories{
-        maven {
-            url  "http://dl.bintray.com/lukaville/maven"
-        }
+repositories {
+    maven {
+        url "http://dl.bintray.com/lukaville/maven"
     }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -46,10 +46,15 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:15.0.0'
     implementation 'com.google.maps.android:android-maps-utils:0.4+'
 
+    //Material File Picker
+    implementation 'com.nbsp:library:1.8'
+
+    implementation 'com.android.support:design:26.1.0'
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    //Material File Picker
-    implementation 'com.nbsp:library:1.8'
+
 }

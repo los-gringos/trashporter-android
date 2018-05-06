@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        openMapsButton = findViewById(R.id.mainOpenMapsButton);
-        openMapsButton.setOnClickListener(openMapsButtonClicked);
-
-        importFileButton = findViewById(R.id.mainFilePickerButton);
-        importFileButton.setOnClickListener(importFileButtonClicked);
-
-        filePathText = findViewById(R.id.fileTextView);
+        startActivity(new Intent(getBaseContext(), NavDrawerActivity.class));
+//        openMapsButton = findViewById(R.id.mainOpenMapsButton);
+//        openMapsButton.setOnClickListener(openMapsButtonClicked);
+//
+//        importFileButton = findViewById(R.id.mainFilePickerButton);
+//        importFileButton.setOnClickListener(importFileButtonClicked);
+//
+//        filePathText = findViewById(R.id.fileTextView);
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -44,54 +44,54 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    View.OnClickListener openMapsButtonClicked = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            startActivity(new Intent(getBaseContext(), Map.class));
-        }
-    };
-
-    View.OnClickListener importFileButtonClicked = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-            new MaterialFilePicker()
-                    .withActivity(MainActivity.this)
-                    .withRequestCode(1000)
-                    .withHiddenFiles(true) // Show hidden files and folders
-                    .start();
-
-        }
-    };
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == 1000 && resultCode == RESULT_OK) {
-            String filePath = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
+//
+//    View.OnClickListener openMapsButtonClicked = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            startActivity(new Intent(getBaseContext(), Map.class));
+//        }
+//    };
+//
+//    View.OnClickListener importFileButtonClicked = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//
+//            new MaterialFilePicker()
+//                    .withActivity(MainActivity.this)
+//                    .withRequestCode(1000)
+//                    .withHiddenFiles(true) // Show hidden files and folders
+//                    .start();
+//
+//        }
+//    };
 
 
-            // Do anything with file. filepath is on filepath variable
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == 1000 && resultCode == RESULT_OK) {
+//            String filePath = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
+//
+//
+//            // Do anything with file. filepath is on filepath variable
+//
+//            filePathText.setText(filePath);
+//        }
+//    }
 
-            filePathText.setText(filePath);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case 1000: {
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "Permission not granted", Toast.LENGTH_SHORT).show();
-                }
-                finish();
-
-            }
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        switch (requestCode) {
+//            case 1000: {
+//                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(this, "Permission not granted", Toast.LENGTH_SHORT).show();
+//                }
+//                finish();
+//
+//            }
+//        }
+//    }
 }

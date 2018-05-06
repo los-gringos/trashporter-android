@@ -13,4 +13,5 @@ public interface ApiInterface {
                                             @Query("origins") String originLatLng,
                                             @Query("destinations") String destLatLng,
                                             @Query("key") String apiKey);
+
 }
