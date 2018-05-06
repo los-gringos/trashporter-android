@@ -36,6 +36,12 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
+
+    @Override
     public void onMapReady(GoogleMap googleMap) {
         //Creates Markers on Map and inserts them to List markers.
 
@@ -62,25 +68,25 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         LatLng peponia = new LatLng(40.988154, 23.516756);
 
         Marker serresMarker = googleMap.addMarker(new MarkerOptions().position(serres)
-                .title("Marker in Serres"));
+                .title("Serres"));
         Marker provatasMarker = googleMap.addMarker(new MarkerOptions().position(provatas)
-                .title("Marker in provatas"));
+                .title("Provatas"));
         Marker anwKamilaMarker = googleMap.addMarker(new MarkerOptions().position(anwKamila)
-                .title("Marker in Anw Kamila"));
+                .title("Anw Kamila"));
         Marker katwKamilaMarker = googleMap.addMarker(new MarkerOptions().position(katwKamila)
-                .title("Marker in Katw Kamila"));
+                .title("Katw Kamila"));
         Marker mitrousiMarker = googleMap.addMarker(new MarkerOptions().position(mitrousi)
-                .title("Marker in Mitrousi"));
+                .title("Mitrousi"));
         Marker koumariaMarker = googleMap.addMarker(new MarkerOptions().position(koumaria)
-                .title("Marker in Koumaria"));
+                .title("Koumaria"));
         Marker skoutariMarker = googleMap.addMarker(new MarkerOptions().position(skoutari)
-                .title("Marker in Skoutari"));
+                .title("Skoutari"));
         Marker adelfikoMarker = googleMap.addMarker(new MarkerOptions().position(adelfiko)
-                .title("Marker in Adelfiko"));
+                .title("Adelfiko"));
         Marker agiaEleniMarker = googleMap.addMarker(new MarkerOptions().position(agiaEleni)
-                .title("Marker in Agia Eleni"));
+                .title("Agia Eleni"));
         Marker peponiaMarker = googleMap.addMarker(new MarkerOptions().position(peponia)
-                .title("Marker in Peponia"));
+                .title("Peponia"));
 
         markers.add(serresMarker);
         markers.add(provatasMarker);
@@ -113,14 +119,36 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
     }
 
     public void setPolyliners(GoogleMap googleMap) {
+        LatLng serres = new LatLng(41.092083, 23.541016);
+        LatLng provatas = new LatLng(41.068238, 23.390686);
+        LatLng anwKamila = new LatLng(41.058320, 23.424134);
+        LatLng katwKamila = new LatLng(41.020431, 23.483293);
+        LatLng mitrousi = new LatLng(41.058680, 23.457547);
+        LatLng koumaria = new LatLng(41.016434, 23.434656);
+        LatLng skoutari = new LatLng(41.020032, 23.520701);
+        LatLng adelfiko = new LatLng(41.014645, 23.457354);
+        LatLng agiaEleni = new LatLng(41.003545, 23.559196);
+        LatLng peponia = new LatLng(40.988154, 23.516756);
         Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
                 .clickable(true)
-                .add(
-                        new LatLng(41.092083, 23.541016),
-                        new LatLng(41.068238, 23.390686),
-                        new LatLng(41.058320, 23.424134),
-                        new LatLng(41.020431, 23.483293),
-                        new LatLng(41.058680, 23.457547),
-                        new LatLng(41.016434, 23.434656)));
+                .add(serres, provatas, anwKamila, koumaria, adelfiko));
+        Polyline polyline2 = googleMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(serres, mitrousi, anwKamila));
+        Polyline polyline3 = googleMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(serres, mitrousi, katwKamila, koumaria));
+        Polyline polyline4 = googleMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(serres, skoutari, katwKamila));
+        Polyline polyline5 = googleMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(serres, skoutari, peponia, adelfiko));
+        Polyline polyline6 = googleMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(serres, skoutari, agiaEleni, peponia, adelfiko));
+        Polyline polyline7 = googleMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(serres, mitrousi, koumaria, adelfiko));
     }
 }

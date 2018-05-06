@@ -23,6 +23,7 @@ public class ImportActivity extends AppCompatActivity {
 
     Button addFileButton;
     private TextView filePathText;
+    private Button loadDefaultsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class ImportActivity extends AppCompatActivity {
         addFileButton = findViewById(R.id.addButton);
         addFileButton.setOnClickListener(addFileButtonClicked);
 
+        loadDefaultsButton = findViewById(R.id.importDefaultButtons);
+        loadDefaultsButton.setOnClickListener(loadDefaultsButtonClicked);
 
         filePathText = findViewById(R.id.fileTextView);
 
@@ -57,7 +60,12 @@ public class ImportActivity extends AppCompatActivity {
         };
 
 
-
+    private View.OnClickListener loadDefaultsButtonClicked = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(getBaseContext(), Map.class));
+        }
+    };
 
         @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
