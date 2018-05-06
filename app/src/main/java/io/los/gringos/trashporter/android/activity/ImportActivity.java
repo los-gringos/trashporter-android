@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
+import io.los.gringos.trashporter.android.utils.ReadFromFile;
+
 import io.los.gringos.trashporter.R;
 
 public class ImportActivity extends AppCompatActivity {
@@ -75,6 +77,10 @@ public class ImportActivity extends AppCompatActivity {
             // Do anything with file. filepath is on filepath variable
 
             filePathText.setText(filePath);
+
+            ReadFromFile fileReader = new ReadFromFile();
+            fileReader.printFileLinesOnTerminal(filePath);
+
         }
     }
 
