@@ -295,6 +295,7 @@ gradle-app.setting
 
 !/gradle/wrapper/gradle-wrapper.jar
 
+!/app/build/outputs/apk/debug/app-debug.apk
 
 # End of https://www.gitignore.io/api/git,java,gradle,android,intellij,jetbrains,androidstudio
 
