@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/mainWelcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_marginEnd="8dp"
@@ -31,6 +31,7 @@
         android:layout_marginTop="32dp"
         android:text="Welcome to Trashporter APP"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/white"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +41,8 @@
         tools:textColor="@android:color/white" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="215dp"
+        android:id="@+id/mainGetStartedTextView"
+        android:layout_width="wrap_content"
         android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -52,6 +53,6 @@
         app:layout_constraintBottom_toTopOf="@+id/getStartedButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/mainWelcomeTextView" />
 
 </android.support.constraint.ConstraintLayout>

@@ -23,14 +23,15 @@
         app:layout_constraintVertical_bias="0.31" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="175dp"
+        android:id="@+id/selectImportFileTextView"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
         android:text="Select file to import"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -38,13 +39,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/importSelectDefaultFileTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="184dp"
         android:layout_marginStart="46dp"
         android:text="Or select default"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,7 +61,7 @@
         android:text="Load Defaults"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5" />
+        app:layout_constraintStart_toEndOf="@+id/importSelectDefaultFileTextView" />
 
     <TextView
         android:id="@+id/fileTextView"
@@ -68,6 +70,7 @@
         android:layout_marginEnd="220dp"
         android:layout_marginStart="163dp"
         android:layout_marginTop="102dp"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
