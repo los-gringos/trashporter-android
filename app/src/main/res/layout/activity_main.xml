@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:theme="?android:attr/actionBarPopupTheme"
     tools:context="io.los.gringos.trashporter.android.activity.MainActivity">
 
@@ -23,18 +24,20 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="236dp"
+        android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:text="Welcome to Trashporter APP"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:textAppearance="@style/TextAppearance.AppCompat.Button"
-        tools:textColor="@android:color/holo_red_dark" />
+        tools:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/textView4"
@@ -45,6 +48,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Please click the button to get started"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toTopOf="@+id/getStartedButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
