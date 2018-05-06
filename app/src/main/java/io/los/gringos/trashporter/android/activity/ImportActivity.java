@@ -15,9 +15,13 @@ import android.widget.Toast;
 import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
+import io.los.gringos.trashporter.android.model.DistanceMatrix;
+import io.los.gringos.trashporter.android.rest.ApiClient;
+import io.los.gringos.trashporter.android.rest.ApiInterface;
 import io.los.gringos.trashporter.android.utils.ReadFromFile;
 
 import io.los.gringos.trashporter.R;
+import retrofit2.Call;
 
 public class ImportActivity extends AppCompatActivity {
 
@@ -102,4 +106,5 @@ public class ImportActivity extends AppCompatActivity {
 
     }
     };
+
 }

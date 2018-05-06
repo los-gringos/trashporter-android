@@ -19,6 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.los.gringos.trashporter.R;
+import io.los.gringos.trashporter.android.model.DistanceMatrix;
+import io.los.gringos.trashporter.android.rest.ApiClient;
+import io.los.gringos.trashporter.android.rest.ApiInterface;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Map extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -56,6 +62,8 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
     }
 
     public void addMarkers(GoogleMap googleMap) {
+        ApiInterface apiService = ApiClient.getLocationClient().create(ApiInterface.class);
+
         LatLng serres = new LatLng(41.092083, 23.541016);
         LatLng provatas = new LatLng(41.068238, 23.390686);
         LatLng anwKamila = new LatLng(41.058320, 23.424134);
@@ -67,26 +75,44 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         LatLng agiaEleni = new LatLng(41.003545, 23.559196);
         LatLng peponia = new LatLng(40.988154, 23.516756);
 
-        Marker serresMarker = googleMap.addMarker(new MarkerOptions().position(serres)
+
+        final Marker serresMarker = googleMap.addMarker(new MarkerOptions().position(serres)
                 .title("Serres"));
-        Marker provatasMarker = googleMap.addMarker(new MarkerOptions().position(provatas)
+        final Marker provatasMarker = googleMap.addMarker(new MarkerOptions().position(provatas)
                 .title("Provatas"));
-        Marker anwKamilaMarker = googleMap.addMarker(new MarkerOptions().position(anwKamila)
+        final Marker anwKamilaMarker = googleMap.addMarker(new MarkerOptions().position(anwKamila)
                 .title("Anw Kamila"));
-        Marker katwKamilaMarker = googleMap.addMarker(new MarkerOptions().position(katwKamila)
+        final Marker katwKamilaMarker = googleMap.addMarker(new MarkerOptions().position(katwKamila)
                 .title("Katw Kamila"));
-        Marker mitrousiMarker = googleMap.addMarker(new MarkerOptions().position(mitrousi)
+        final Marker mitrousiMarker = googleMap.addMarker(new MarkerOptions().position(mitrousi)
                 .title("Mitrousi"));
-        Marker koumariaMarker = googleMap.addMarker(new MarkerOptions().position(koumaria)
+        final Marker koumariaMarker = googleMap.addMarker(new MarkerOptions().position(koumaria)
                 .title("Koumaria"));
-        Marker skoutariMarker = googleMap.addMarker(new MarkerOptions().position(skoutari)
+        final Marker skoutariMarker = googleMap.addMarker(new MarkerOptions().position(skoutari)
                 .title("Skoutari"));
         Marker adelfikoMarker = googleMap.addMarker(new MarkerOptions().position(adelfiko)
                 .title("Adelfiko"));
-        Marker agiaEleniMarker = googleMap.addMarker(new MarkerOptions().position(agiaEleni)
+        final Marker agiaEleniMarker = googleMap.addMarker(new MarkerOptions().position(agiaEleni)
                 .title("Agia Eleni"));
-        Marker peponiaMarker = googleMap.addMarker(new MarkerOptions().position(peponia)
+        final Marker peponiaMarker = googleMap.addMarker(new MarkerOptions().position(peponia)
                 .title("Peponia"));
+
+        Call<DistanceMatrix> call = apiService.getDistanceBetween("metric",
+                serres.latitude + "," + serres.longitude,
+                adelfiko.latitude + "," + adelfiko.longitude,
+                ApiClient.API_KEY);
+        call.enqueue(new Callback<DistanceMatrix>() {
+            @Override
+            public void onResponse(Call<DistanceMatrix> call, Response<DistanceMatrix> response) {
+                serresMarker.setTitle("Serres - Distance from Adelfiko "
+                        + response.body().getDistanceText());
+            }
+
+            @Override
+            public void onFailure(Call<DistanceMatrix> call, Throwable t) {
+
+            }
+        });
 
         markers.add(serresMarker);
         markers.add(provatasMarker);
